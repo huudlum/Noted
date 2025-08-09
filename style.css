@@ -1,0 +1,162 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+:root{
+  --highlight-color: #ff5945;
+  --container-color: #f2f8fc;
+}
+
+body{
+  background: linear-gradient(to left, #bc3800, #dd8100);
+}
+
+.container{
+  width: 100%;
+  max-width: 540px;
+  padding: 40px 30px 10px;
+  margin: 100px auto 20px;
+  background: var(--container-color);
+  border: 0.5rem solid var(--highlight-color);
+  border-radius: 10px;
+}
+
+.container h2{
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1%;
+  text-align: left;
+}
+
+.container p{
+  margin-bottom: 1rem;
+}
+
+#promo{
+  margin-top: 0.5rem;
+}
+
+#promo a{
+  text-decoration: none;
+  color: black;
+}
+
+#promo a:hover{
+  color: var(--highlight-color);
+}
+
+#save{
+  text-align: center;
+  font-size: 0;
+  padding-top: 50px;
+  overflow: hidden;
+}
+
+#save.show-save{
+  font-size: 0.5rem;
+}
+
+.container input{
+  flex: 1;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  padding: 10px;
+  border: none;
+  background: transparent;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  margin-top: 2rem;
+  background: #D2DBE1;
+  border-radius: 25px;
+}
+
+.container button{
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+  background: var(--highlight-color);
+  color: var(--container-color);
+}
+
+ul li{
+  list-style: none;
+  font-size: 17px;
+  padding: 20px 8px 12px 35px;
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+}
+
+ul li::before{
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: url("unchecked.png") center;
+  background-size: cover;
+  top: 20px;
+  left: 8px;
+}
+
+ul li.checked{
+  text-decoration: line-through;
+  color: #555;
+}
+
+ul li.checked::before{
+  background: url("checked.png") center;
+  background-size: cover;
+}
+
+ul li span{
+  position: absolute;
+  right: 0;
+  top: 11px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+ul li span:hover{
+  background: #D2DBE1;
+}
+
+/*bottom bar styling*/
+.footer {
+  font-size: 1rem;
+  color: var(--container-color);
+  height: 1rem;
+  background: var(--highlight-color);
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.footer a{
+  color: var(--container-color);
+}
+
+@media (max-width: 450px) {
+  .container {
+    width: 90%;
+  }
+}
