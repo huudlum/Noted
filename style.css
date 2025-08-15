@@ -16,7 +16,7 @@ body{
 
 .container{
   width: 100%;
-  max-width: 540px;
+  max-width: 740px;
   padding: 40px 30px 10px;
   margin: 100px auto 20px;
   background: var(--container-color);
@@ -33,10 +33,6 @@ body{
 
 .container p{
   margin-bottom: 1rem;
-}
-
-#promo{
-  margin-top: 0.5rem;
 }
 
 #promo a{
@@ -69,13 +65,42 @@ body{
   background: transparent;
 }
 
-.row{
+.titleBox{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 20px;
   margin-top: 2rem;
   background: #D2DBE1;
+  border-radius: 25px;
+}
+
+.noteBody{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  margin-top: 2rem;
+  background: #D2DBE1;
+  border-radius: 25px;
+}
+
+.noteTime{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  margin-top: 2rem;
+  background: #D2DBE1;
+  border-radius: 25px;
+}
+
+.navBtn{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin: 1em;
   border-radius: 25px;
 }
 
