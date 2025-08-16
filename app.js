@@ -1,3 +1,4 @@
+/*
 const titleBox = document.getElementById("titleBox")
 var save = document.getElementById("save")
 var notes =[]
@@ -19,3 +20,4 @@ function saveData(){
         localStorage.setItem("data", noteBody.innerHTML);
     }
 }
+*/

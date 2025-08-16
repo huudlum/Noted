@@ -55,6 +55,14 @@ body{
   font-size: 0.5rem;
 }
 
+#noteEntry{
+ visibility: hidden;
+}
+
+#noteEntry.show-noteEntry{
+  visibility: visible;
+}
+
 .container input{
   flex: 1;
   width: 100%;
@@ -74,6 +82,15 @@ body{
   background: #D2DBE1;
   border-radius: 25px;
 }
+.noteTime{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  margin-top: 0.5rem;
+  background: #D2DBE1;
+  border-radius: 25px;
+}
 
 .noteBody{
   display: flex;
@@ -85,21 +102,22 @@ body{
   border-radius: 25px;
 }
 
-.noteTime{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 20px;
-  margin-top: 2rem;
-  background: #D2DBE1;
-  border-radius: 25px;
+.noteBody textarea{
+  resize: none;
+  width: 96%;
+  height: 150px;
+  font-size: 1rem;
+  background-color: #D2DBE1;
+  border: none;
+  padding-top: 0.5rem;
 }
 
 .navBtn{
   align-items: center;
   display: flex;
   justify-content: center;
-  gap: 1em;
+  gap: 4rem;
+  padding-top: 1.5rem;
   margin: 1em;
   border-radius: 25px;
 }
@@ -113,54 +131,6 @@ body{
   border-radius: 40px;
   background: var(--highlight-color);
   color: var(--container-color);
-}
-
-ul li{
-  list-style: none;
-  font-size: 17px;
-  padding: 20px 8px 12px 35px;
-  user-select: none;
-  position: relative;
-  cursor: pointer;
-}
-
-ul li::before{
-  content: '';
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  border-radius: 50px;
-  background: url("unchecked.png") center;
-  background-size: cover;
-  top: 20px;
-  left: 8px;
-}
-
-ul li.checked{
-  text-decoration: line-through;
-  color: #555;
-}
-
-ul li.checked::before{
-  background: url("checked.png") center;
-  background-size: cover;
-}
-
-ul li span{
-  position: absolute;
-  right: 0;
-  top: 11px;
-  width: 40px;
-  height: 40px;
-  font-size: 22px;
-  color: #555;
-  line-height: 40px;
-  text-align: center;
-  border-radius: 50%;
-}
-
-ul li span:hover{
-  background: #D2DBE1;
 }
 
 /*bottom bar styling*/
