@@ -1,23 +1,12 @@
-/*
-const titleBox = document.getElementById("titleBox")
-var save = document.getElementById("save")
-var notes =[]
+let noteEntry = document.getElementById("noteEntry");
+let addNoteBtn = document.getElementById("addNoteBtn")
 
-function newNote(){
-    if (titleBox.input.trim() === ''){
-        alert("Please enter your note title");
-    }
-    else {
-        let noteBody =document.createElement('noteBody');
-        saveData();
-    }
-
-function  showNotes(){
-        return;
+function showNote(){
+    noteEntry.classList.add("show-noteEntry");
+    addNoteBtn.classList.add("hide-btn");
 }
 
-function saveData(){
-        localStorage.setItem("data", noteBody.innerHTML);
-    }
-}
-*/
+
+// Need array to show store notes
+// Need function to show all notes in array
+// Need local storage save function to save notes

@@ -63,6 +63,10 @@ body{
   visibility: visible;
 }
 
+#addNoteBtn.hide-btn{
+  visibility: hidden;
+}
+
 .container input{
   flex: 1;
   width: 100%;
