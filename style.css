@@ -18,7 +18,7 @@ body{
   width: 100%;
   max-width: 740px;
   padding: 40px 30px 10px;
-  margin: 100px auto 20px;
+  margin: 50px auto 20px;
   background: var(--container-color);
   border: 0.5rem solid var(--highlight-color);
   border-radius: 10px;
@@ -52,7 +52,7 @@ body{
 }
 
 #save.show-save{
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 #noteEntry{
@@ -113,9 +113,9 @@ body{
   justify-content: center;
   gap: 4rem;
   padding-top: 1.5rem;
-  margin: 1em;
   border-radius: 25px;
 }
+
 
 .container button{
   border: none;

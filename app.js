@@ -3,6 +3,7 @@ let addNoteBtn = document.getElementById("addNoteBtn")
 let notes = [];
 let body = document.getElementById("noteBody")
 let title = document.getElementById("noteTitle")
+let saveMgs = document.getElementById('save')
 
 function showNote(){
     noteEntry.classList.add("show-noteEntry");
@@ -21,6 +22,8 @@ function saveNote(){
     localStorage.setItem("notes", JSON.stringify(notes));
 
     clearInput();
+
+    saveMgs.classList.add("show-save");
 
     console.log(notes);
 }
