@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang"">
+<html class="no-js" lang="">
 
 <head>
   <meta charset="utf-8">
@@ -21,19 +21,15 @@
 
   <div id="noteEntry">
     <div class="titleBox">
-      <input type="text" placeholder="So, whats the big idea?" id="titleBox">
-    </div>
-
-    <div class="noteTime">
-      <input type="datetime-local">
+      <label for="noteTitle"><input type="text" id="noteTitle" placeholder="So, whats the big idea?"></label>
     </div>
 
     <div class="noteBody">
-      <textarea name="noteBody" placeholder="Put your inane dribblings in here"></textarea>
+        <textarea name="noteBody" id="noteBody" placeholder="Put your inane dribbling in here"></textarea>
     </div>
 
     <div class="navBtn">
-      <button onclick="alert('Nope. Not Yet.')">Save Note</button>
+      <button onclick="saveNote()">Save Note</button>
     </div>
 
   </div>

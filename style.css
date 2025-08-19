@@ -86,22 +86,13 @@ body{
   background: #D2DBE1;
   border-radius: 25px;
 }
-.noteTime{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 20px;
-  margin-top: 0.5rem;
-  background: #D2DBE1;
-  border-radius: 25px;
-}
 
 .noteBody{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 20px;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   background: #D2DBE1;
   border-radius: 25px;
 }

@@ -1,12 +1,36 @@
-let noteEntry = document.getElementById("noteEntry");
+let noteEntry = document.getElementById("noteEntry")
 let addNoteBtn = document.getElementById("addNoteBtn")
+let notes = [];
+let body = document.getElementById("noteBody")
+let title = document.getElementById("noteTitle")
 
 function showNote(){
     noteEntry.classList.add("show-noteEntry");
     addNoteBtn.classList.add("hide-btn");
 }
 
+// function to save notes. Does not work after page refresh but builds the array correctly
+function saveNote(){
+    const newNote = {
+        title: title.value,
+        body: body.value,
+        time: new Date().toLocaleString()
+    }
 
-// Need array to show store notes
+    notes.push(newNote);
+    localStorage.setItem("notes", JSON.stringify(notes));
+
+    clearInput();
+
+    console.log(notes);
+}
+
+///clears the inputs once save is clicked
+function clearInput(){
+    title.value = "";
+    body.value = "";
+}
+
+// Need to keep details between sessions
 // Need function to show all notes in array
-// Need local storage save function to save notes
+// Need delete function to remove note
