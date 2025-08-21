@@ -47,11 +47,22 @@ body{
 #save{
   text-align: center;
   font-size: 0;
-  padding-top: 50px;
+  padding-top: 10px;
   overflow: hidden;
 }
 
 #save.show-save{
+  font-size: 1rem;
+}
+
+#noNote{
+  text-align: center;
+  font-size: 0;
+  padding-top: 10px;
+  overflow: hidden;
+}
+
+#noNote.show{
   font-size: 1rem;
 }
 

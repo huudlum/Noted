@@ -4,6 +4,7 @@ let notes = [];
 let body = document.getElementById("noteBody")
 let title = document.getElementById("noteTitle")
 let saveMgs = document.getElementById('save')
+let noteMgs = document.getElementById('noNote')
 
 function showNote(){
     noteEntry.classList.add("show-noteEntry");
@@ -12,18 +13,25 @@ function showNote(){
 
 // function to save notes. Does not work after page refresh but builds the array correctly
 function saveNote(){
-    const newNote = {
-        title: title.value,
-        body: body.value,
-        time: new Date().toLocaleString()
+    if( title.value === "" || body.value ===""){
+        noteMgs.classList.add('show');
+        saveMgs.classList.remove('show-save');
     }
+    else{
+        const newNote = {
+            title: title.value,
+            body: body.value,
+            time: new Date().toLocaleString()
+        }
 
-    notes.push(newNote);
-    localStorage.setItem("notes", JSON.stringify(notes));
+        notes.push(newNote);
+        localStorage.setItem("notes", JSON.stringify(notes));
 
-    clearInput();
+        clearInput();
 
-    saveMgs.classList.add("show-save");
+        saveMgs.classList.add("show-save");
+        noteMgs.classList.remove('show');
+    }
 
     console.log(notes);
 }
