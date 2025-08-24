@@ -5,6 +5,7 @@ let body = document.getElementById("noteBody")
 let title = document.getElementById("noteTitle")
 let saveMgs = document.getElementById('save')
 let noteMgs = document.getElementById('noNote')
+let noteDisplay = document.getElementById('noteDisplay')
 
 function showNote(){
     noteEntry.classList.add("show-noteEntry");
@@ -14,7 +15,7 @@ function showNote(){
 // function to save notes. Does not work after page refresh but builds the array correctly
 function saveNote(){
     if( title.value === "" || body.value ===""){
-        noteMgs.classList.add('show');
+        document.getElementById("noteBody").placeholder = "You haven't entered anything";
         saveMgs.classList.remove('show-save');
     }
     else{
@@ -42,6 +43,25 @@ function clearInput(){
     body.value = "";
 }
 
-// Need to keep details between sessions
-// Need function to show all notes in array
-// Need delete function to remove note
+function displayNotes(){
+    noteDisplay.innerHTML = "";
+
+    const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+
+    if (storedNotes.length === 0){
+        noteDisplay.innerHTML = "<p>No Notes Here</p>";
+        alert('No Notes Here');
+    }
+
+    storedNotes.forEach(note => {
+        const noteCard = document.createElement("div");
+        noteCard.classList.add("note-card");
+        noteCard.innerHTML = `
+            <h3>${note.title}</h3>
+            <p>${note.body}</p>
+            <small>${note.time}</small>
+            <hr>
+            `;
+        noteDisplay.appendChild(noteCard);
+    });
+}

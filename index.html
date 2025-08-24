@@ -15,7 +15,7 @@
   <p id="promo">A simple browser based notes tool <a href="https://supertasty.neocities.org/Checkmate/">
     Looking for a to-do list instead?</a></p>
   <div class="navBtn">
-    <button onclick="alert('Button No Work Yet')">Show My Notes</button>
+    <button onclick=displayNotes()>Show My Notes</button>
     <button onclick=showNote() id="addNoteBtn">New Note</button>
   </div>
 
@@ -31,13 +31,12 @@
     <div class="navBtn">
       <button id="saveBtn" onclick="saveNote()">Save Note</button>
     </div>
-
   </div>
 
-  <p id="save">Your notes are saved automatically in your browser</p>
-  <p id="noNote">You've left it blank! Write your note before you try to save it</p>
+  <div id="noteDisplay"></div>
 
-</div>
+<p id="save">Your notes are saved automatically in your browser</p>
+
 
 <!--Footer area with external links-->
 <footer class="footer"> Created by <a href="https://danhobbs.neocities.org"> Dan Hobbs</a> |
