@@ -54,14 +54,18 @@ function displayNotes(){
     }
 
     storedNotes.forEach(note => {
-        const noteCard = document.createElement("div");
+        const noteCard = document.createElement("noteLi");
+        let deleteSpan = document.createElement("span");
+        let separate = document.createElement("hr")
+        deleteSpan.innerHTML = "\u00d7";
         noteCard.classList.add("note-card");
         noteCard.innerHTML = `
             <h3>${note.title}</h3>
             <p>${note.body}</p>
             <small>${note.time}</small>
-            <hr>
             `;
         noteDisplay.appendChild(noteCard);
+        noteCard.appendChild(deleteSpan);
+        noteCard.appendChild(separate);
     });
 }
