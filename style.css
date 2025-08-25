@@ -55,17 +55,6 @@ body{
   font-size: 1rem;
 }
 
-#noNote{
-  text-align: center;
-  font-size: 0;
-  padding-top: 10px;
-  overflow: hidden;
-}
-
-#noNote.show{
-  font-size: 1rem;
-}
-
 #noteEntry{
  visibility: hidden;
 }
@@ -108,7 +97,7 @@ body{
   border-radius: 25px;
 }
 
-.noteBody textarea{
+#noteBody{
   resize: none;
   width: 96%;
   height: 150px;
@@ -126,7 +115,6 @@ body{
   padding-top: 1.5rem;
   border-radius: 25px;
 }
-
 
 .container button{
   border: none;
@@ -150,6 +138,36 @@ body{
   width: 100%;
   bottom: 0;
   cursor: pointer;
+}
+
+.note-card {
+  position: relative;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.note-card h3 {
+  padding-bottom: 1em;
+}
+
+.deleteSpan {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.deleteSpan:hover{
+  background: #D2DBE1;
 }
 
 .footer a{

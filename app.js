@@ -54,10 +54,12 @@ function displayNotes(){
     }
 
     storedNotes.forEach(note => {
-        const noteCard = document.createElement("noteLi");
+        const noteCard = document.createElement("div");
         let deleteSpan = document.createElement("span");
-        let separate = document.createElement("hr")
+        let separate = document.createElement("hr");
+
         deleteSpan.innerHTML = "\u00d7";
+        deleteSpan.classList.add("deleteSpan");
         noteCard.classList.add("note-card");
         noteCard.innerHTML = `
             <h3>${note.title}</h3>
