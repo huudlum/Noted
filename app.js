@@ -43,6 +43,15 @@ function clearInput(){
     body.value = "";
 }
 
+noteDisplay.addEventListener("click", function (e){
+   if(e.target.tagName === "SPAN"){
+       const confirmed = confirm("Are you sure?");
+       if (confirmed){
+           e.target.parentElement.remove();
+       }
+   }
+}, false)
+
 function displayNotes(){
     noteDisplay.innerHTML = "";
 
