@@ -35,6 +35,7 @@ function saveNote(){
     }
 
     console.log(notes);
+    saveNote();
 }
 
 ///clears the inputs once save is clicked
@@ -79,4 +80,21 @@ function displayNotes(){
         noteCard.appendChild(deleteSpan);
         noteCard.appendChild(separate);
     });
+}
+
+function saveData(){
+    localStorage.setItem("data", JSON.stringify(notes));
+}
+
+function deleteAllNotes(){
+    const confirmed = confirm("Delete All Your Notes?");
+    if (confirmed) {
+        notes = [];
+        localStorage.removeItem("notes");
+        location.reload(true);
+    }
+}
+
+function loadData(){
+//function here
 }
