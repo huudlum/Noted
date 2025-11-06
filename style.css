@@ -22,6 +22,7 @@ body{
   background: var(--container-color);
   border: 0.5rem solid var(--highlight-color);
   border-radius: 10px;
+  position: relative;
 }
 
 .container h2{
@@ -44,130 +45,73 @@ body{
   color: var(--highlight-color);
 }
 
-#save{
-  text-align: center;
-  font-size: 0;
-  padding-top: 10px;
-  overflow: hidden;
-}
-
-#save.show-save{
-  font-size: 1rem;
-}
-
-#noteEntry{
- visibility: hidden;
-}
-
-#noteEntry.show-noteEntry{
-  visibility: visible;
-}
-
-#addNoteBtn.hide-btn{
-  visibility: hidden;
-}
-
-.container input{
+.container textarea{
   flex: 1;
   width: 100%;
   font-size: 16px;
   outline: none;
   padding: 10px;
-  border: none;
+  border: 3px solid var(--highlight-color);
   background: transparent;
+  min-height: 400px;
 }
 
-.titleBox{
+.notes-info {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding-left: 20px;
-  margin-top: 2rem;
-  background: #D2DBE1;
-  border-radius: 25px;
+  align-items: center;
+  margin-top: 5px;
 }
 
-.noteBody{
+.notes-info-left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-left: 20px;
-  margin-top: 0.5rem;
-  background: #D2DBE1;
-  border-radius: 25px;
-}
-
-#noteBody{
-  resize: none;
-  width: 96%;
-  height: 150px;
-  font-size: 1rem;
-  background-color: #D2DBE1;
-  border: none;
-  padding-top: 0.5rem;
-}
-
-.navBtn{
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  padding-top: 1.5rem;
-  border-radius: 25px;
+  gap: 5px;
 }
 
 .container button{
   border: none;
   outline: none;
-  padding: 16px 50px;
+  padding: 10px 30px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 40px;
   background: var(--highlight-color);
   color: var(--container-color);
+}
+
+#charCount {
+  font-size: 14px;
+  color: #666;
+  margin-right: 15px;
+}
+
+.save-indicator {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 4px 8px;
+  background: var(--highlight-color);
+  color: white;
+  border-radius: 3px;
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.save-indicator.show {
+  opacity: 1;
 }
 
 /*bottom bar styling*/
 .footer {
   font-size: 1rem;
   color: var(--container-color);
-  height: 1rem;
+  height: 2rem;
   background: var(--highlight-color);
   text-align: center;
   position: fixed;
   width: 100%;
   bottom: 0;
   cursor: pointer;
-}
-
-.note-card {
-  position: relative;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-top: 20px;
-}
-
-.note-card h3 {
-  padding-bottom: 1em;
-}
-
-.deleteSpan {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 22px;
-  bottom: 20px;
-  right: 20px;
-  border-radius: 100%;
-  cursor: pointer;
-}
-
-.deleteSpan:hover{
-  background: #D2DBE1;
 }
 
 .footer a{

@@ -1,100 +1,54 @@
-let noteEntry = document.getElementById("noteEntry")
-let addNoteBtn = document.getElementById("addNoteBtn")
-let notes = [];
-let body = document.getElementById("noteBody")
-let title = document.getElementById("noteTitle")
-let saveMgs = document.getElementById('save')
-let noteMgs = document.getElementById('noNote')
-let noteDisplay = document.getElementById('noteDisplay')
+const notesArea = document.getElementById('notesArea');
+if (notesArea) {
+    const clearBtn = document.getElementById('clearBtn');
+    const charCount = document.getElementById('charCount');
+    const saveIndicator = document.getElementById('saveIndicator');
+    const STORAGE_KEY = 'noted';
 
-function showNote(){
-    noteEntry.classList.add("show-noteEntry");
-    addNoteBtn.classList.add("hide-btn");
-}
-
-// function to save notes. Does not work after page refresh but builds the array correctly
-function saveNote(){
-    if( title.value === "" || body.value ===""){
-        document.getElementById("noteBody").placeholder = "You haven't entered anything";
-        saveMgs.classList.remove('show-save');
+    function loadNotes() {
+        const savedNotes = localStorage.getItem(STORAGE_KEY);
+        if (savedNotes) {
+            notesArea.value = savedNotes;
+            updateCharCount();
+        }
     }
-    else{
-        const newNote = {
-            title: title.value,
-            body: body.value,
-            time: new Date().toLocaleString()
+
+    function saveNotes() {
+        localStorage.setItem(STORAGE_KEY, notesArea.value);
+        showSaveIndicator();
+    }
+
+    function showSaveIndicator() {
+        saveIndicator.classList.add('show');
+        setTimeout(() => {
+            saveIndicator.classList.remove('show');
+        }, 1500);
+    }
+
+    function updateCharCount() {
+        const count = notesArea.value.length;
+        charCount.textContent = `${count} character${count !== 1 ? 's' : ''}`;
+    }
+
+    function clearNotes() {
+        if (notesArea.value.trim() === '') {
+            return;
         }
 
-        notes.push(newNote);
-        localStorage.setItem("notes", JSON.stringify(notes));
-
-        clearInput();
-
-        saveMgs.classList.add("show-save");
-        noteMgs.classList.remove('show');
+        if (confirm('Are you sure you want to clear all notes?')) {
+            notesArea.value = '';
+            localStorage.removeItem(STORAGE_KEY);
+            updateCharCount();
+        }
     }
 
-    console.log(notes);
-    saveNote();
-}
-
-///clears the inputs once save is clicked
-function clearInput(){
-    title.value = "";
-    body.value = "";
-}
-
-noteDisplay.addEventListener("click", function (e){
-   if(e.target.tagName === "SPAN"){
-       const confirmed = confirm("Are you sure?");
-       if (confirmed){
-           e.target.parentElement.remove();
-       }
-   }
-}, false)
-
-function displayNotes(){
-    noteDisplay.innerHTML = "";
-
-    const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
-
-    if (storedNotes.length === 0){
-        noteDisplay.innerHTML = "<p>No Notes Here</p>";
-        alert('No Notes Here');
-    }
-
-    storedNotes.forEach(note => {
-        const noteCard = document.createElement("div");
-        let deleteSpan = document.createElement("span");
-        let separate = document.createElement("hr");
-
-        deleteSpan.innerHTML = "\u00d7";
-        deleteSpan.classList.add("deleteSpan");
-        noteCard.classList.add("note-card");
-        noteCard.innerHTML = `
-            <h3>${note.title}</h3>
-            <p>${note.body}</p>
-            <small>${note.time}</small>
-            `;
-        noteDisplay.appendChild(noteCard);
-        noteCard.appendChild(deleteSpan);
-        noteCard.appendChild(separate);
+    let saveTimeout;
+    notesArea.addEventListener('input', () => {
+        updateCharCount();
+        clearTimeout(saveTimeout);
+        saveTimeout = setTimeout(saveNotes, 500);
     });
-}
 
-function saveData(){
-    localStorage.setItem("data", JSON.stringify(notes));
-}
-
-function deleteAllNotes(){
-    const confirmed = confirm("Delete All Your Notes?");
-    if (confirmed) {
-        notes = [];
-        localStorage.removeItem("notes");
-        location.reload(true);
-    }
-}
-
-function loadData(){
-//function here
+    clearBtn.addEventListener('click', clearNotes);
+    loadNotes();
 }

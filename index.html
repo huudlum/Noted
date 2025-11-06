@@ -12,37 +12,29 @@
 <body>
 <div class="container">
   <h2>Noted!</h2>
-  <p id="promo">A simple browser based notes tool <a href="https://supertasty.neocities.org/Checkmate/">
+  <p id="promo">A simple browser based notes tool. <br/><a href="https://supertasty.neocities.org/Checkmate/">
     Looking for a to-do list instead?</a></p>
 
-  <div class="navBtn">
-    <button onclick=displayNotes()>Show My Notes</button>
-    <button onclick=showNote() id="addNoteBtn">New Note</button>
-  </div>
+  <div class="notes">
+    <div class="notesBody">
+      <label for="notesArea"></label><textarea id="notesArea" placeholder="Type your notes here... They'll be saved automatically in your browser."></textarea>
 
-  <div id="noteEntry">
-    <div class="titleBox">
-      <label for="noteTitle"><input type="text" id="noteTitle" placeholder="So, whats the big idea?"></label>
-    </div>
+      <div class="notes-info">
+        <div class="notes-info-left">
+        <span id="charCount">0 characters</span>
+        <span class="save-indicator" id="saveIndicator">Saved ✓</span>
+        </div>
+        <button class="clear-btn" id="clearBtn">Clear All</button>
+      </div>
 
-    <div class="noteBody">
-        <textarea name="noteBody" id="noteBody" placeholder="Put your inane dribbling in here"></textarea>
-    </div>
 
-    <div class="navBtn">
-      <button id="saveBtn" onclick="saveNote()">Save Note</button>
     </div>
 
   </div>
 
-  <div id="noteDisplay"></div>
+
 </div>
 
-<p id="save">Your notes are saved automatically in your browser</p>
-
-<div class="navBtn">
-  <button onclick="deleteAllNotes()">Delete All</button>
-</div>
 
 
 <!--Footer area with external links-->
