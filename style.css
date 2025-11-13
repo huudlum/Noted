@@ -105,7 +105,7 @@ body{
 .footer {
   font-size: 1rem;
   color: var(--container-color);
-  height: 2rem;
+  height: 1.5rem;
   background: var(--highlight-color);
   text-align: center;
   position: fixed;
