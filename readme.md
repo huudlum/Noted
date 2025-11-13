@@ -54,33 +54,4 @@ Noted! provides users with a simple, elegant way to capture thoughts, ideas, and
 * Clean typography using the Poppins font family
 * Subtle save indicator with fade transitions for unobtrusive feedback
 
-## 🚀 Getting Started
-
-1. Clone this repository
-2. Open `index.html` in your browser
-3. Start taking notes!
-
-No build process, no installation required. Just open and use.
-
-## 📂 Project Structure
-
-```
-noted/
-├── index.html    # Main HTML structure
-├── style.css     # Styling and layout
-└── app.js        # JavaScript functionality
-```
-
-## 🔗 Links
-
-* **Creator**: [Dan Hobbs](https://danhobbs.neocities.org)
-* **Hosted by**: [Neocities](https://neocities.org)
-* **Code Repository**: [GitHub](https://github.com/huudlum/)
-
-## 📝 License
-
-Feel free to use this project for learning, inspiration, or as a starting point for your own note-taking app!
-
----
-
-*Looking for a to-do list instead? Check out [Checkmate](https://supertasty.neocities.org/Checkmate/)!*
+<img width="1144" height="646" alt="Screenshot 2025-11-13 at 12 23 43" src="https://github.com/user-attachments/assets/975b1d1d-73db-41b1-8577-eec8a08a411a" />
